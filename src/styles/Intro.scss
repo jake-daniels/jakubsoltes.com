@@ -1,0 +1,62 @@
+
+@import 'styles/variables.scss';
+
+.section-intro .text-wrapper {
+	display: flex;
+	justify-content: center;
+	padding-top: 37vh;
+
+	.text {
+		color: white;
+		h1 {
+			text-align: center;
+			font-size: 80px;
+			font-weight: 500;
+			font-family: 'Ubuntu';
+
+		}
+		h2 {
+			text-align: center;
+			font-size: 40px;
+			font-weight: 300;
+			font-family: 'Ubuntu';
+		}
+		.separator {
+			width: 100%;
+			border-bottom: solid 1px;
+			margin-bottom: 10px;
+			margin-top: 5px;
+		}
+	}
+}
+
+.section-intro .arrow {
+	cursor: pointer;
+	$self-size: 8vw;
+
+	position: absolute;
+	bottom: calc(0px - #{$slant-height});
+	right: 6vw;
+
+	width: $self-size;
+	height: calc(#{$slant-height} + #{$self-size});
+
+	display: flex;
+	justify-content: center;
+
+	background: rgba(white, 0.2);
+	.icon {
+		margin-top: 2.5vw;
+		height: 3vw;
+		width: 3vw;
+		color: white;
+		opacity: 0.8;
+	}
+
+	&:hover {
+		.icon {
+			opacity: 1;
+			transform: translateY(10px);
+		}
+	}
+}

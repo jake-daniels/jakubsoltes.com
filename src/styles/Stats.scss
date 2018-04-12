@@ -1,0 +1,206 @@
+
+@import 'styles/variables.scss';
+
+$badge-box-width: 75vh;
+
+.section-stats {
+	position: relative;
+
+	.badge-box {
+		width: $badge-box-width;
+		position: relative;
+		.badges {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+@mixin stats-images() {
+	&.analysis {background-position: 0 0;}
+	&.chat {background-position: 11.1% 0;}
+	&.structure {background-position: 22.2% 0;}
+	&.learn {background-position: 33.3% 0;}
+	&.team {background-position: 44.4% 0;}
+	&.detail {background-position: 55.5% 0;}
+	&.leader {background-position: 66.7% 0;}
+	&.creative {background-position: 77.8% 0;}
+	&.time {background-position: 88.9% 0;}
+	&.art {background-position: 99.9% 0;}
+}
+
+@mixin stats-positions() {
+	&.analysis {top: 10%; left: 23%;}
+	&.chat {top: 10%; left: 55%;}
+	&.structure {top: 33%; left: 5%;}
+	&.learn {top: 33%; left: 39.5%;}
+	&.team {top: 33%; left: 73%;}
+	&.detail {top: 54%; left: 5%;}
+	&.leader {top: 54%; left: 39.5%;}
+	&.creative {top: 54%; left: 73%;}
+	&.time {top: 75%; left: 23%;}
+	&.art {top: 75%; left: 55%;}
+}
+
+@mixin coin ($size) {
+	$outer-size: $size;
+	$inner-size: calc(#{$size} - 2vh);
+	$front-icon-size: calc(#{$size} * 0.5);
+
+	position: relative;
+	perspective: 1000;
+	cursor: pointer;
+
+	.circle, .outer-ring {
+		transition: 0.5s;
+		transform-style: preserve-3d;
+		transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+	}
+	&:hover {
+		.outer-ring {transform: rotate3d(45, 0, 0, 180deg)}
+		.circle {transform: rotate3d(45, 45, 0, 180deg)}
+	}
+
+	.outer-ring {
+		position: absolute;
+		top: -1vh;
+		left: -1vh;
+		width: $outer-size;
+		height: $outer-size;
+		border-radius: 50%;
+		border: 2px solid white;
+	}
+
+	.circle, .front, .back {
+		width: $inner-size;
+		height: $inner-size;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.front, .back {
+		backface-visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+	}
+
+	.front {
+		color: white;
+		z-index: 2;
+		width: $inner-size;
+		height: $inner-size;
+		.fa-icon {
+			width: $front-icon-size;
+			height: $front-icon-size;
+		}
+		transform: rotateX(0deg);
+	}
+
+	.back {
+		transform: rotateX(0deg) rotate3d(45,45,0,180deg);
+	}
+
+	.stat-icon {
+		display: block;
+		width: 80%;
+		height: 80%;
+		background-size: 1000%;
+		background-image: url('../images/stats.png');
+		background-repeat: no-repeat;
+		@include stats-images();
+	}
+}
+
+.section-stats .descriptions {
+	height: 100vh;
+	width: calc((100vw - #{$badge-box-width}) / 2);
+	padding: 7vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+
+	position: absolute;
+	top: 0;
+
+	&.left {
+		left: 0;
+		.item:nth-child(2n) {
+			transform: translateX(20%);
+			text-align: right;
+		}
+	}
+	&.right {
+		right: 0;
+		.item:nth-child(2n + 1) {
+			transform: translateX(20%);
+			text-align: right;
+		}
+	}
+
+	.item {
+		color: white;
+		font-size: 18px;
+		font-style: italic;
+		font-weight: 300;
+
+		height: 10vh;
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		opacity: 0;
+		transition: opacity 1s;
+		&.revealed {
+			opacity: 1;
+		}
+	}
+}
+
+.section-stats .badge {
+	opacity: 0.5;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	align-items: center;
+
+	.label {
+		color: white;
+		font-variant: small-caps;
+		font-size: 18px;
+		font-weight: 500;
+		text-align: center;
+		margin-top: 1.5vh;
+	}
+
+	.coin {
+		@include coin(11vh);
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&.revealed {
+		.outer-ring {transform: rotate3d(45, 0, 0, 180deg)}
+		.circle {transform: rotate3d(45, 45, 0, 180deg)}
+		opacity: 1;
+		transform: scale(1.1);
+	}
+
+	@include stats-positions();
+}
+

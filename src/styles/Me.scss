@@ -1,0 +1,114 @@
+
+@import 'styles/variables.scss';
+
+.section-intro {
+	height: $intro-height;
+
+	clip-path: polygon(
+		0 0,
+		100% 0,
+		100% 100%,
+		0% calc(100% - #{$slant-height})
+	);
+
+	.bg-image {
+		position: fixed;
+		width: 100%;
+		height: $intro-height;
+		background-image: url('../images/backgrounds/bg-intro.jpg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		filter: brightness(75%);
+	}
+}
+
+.section-bio {
+	margin-top: calc(0px - #{$slant-height});
+	height: $bio-height;
+	overflow: hidden;
+
+	.content-overlay {
+		top: $slant-height;
+	}
+
+	.bg-image {
+		position: relative;
+		width: 100%;
+		height: $bio-height;
+
+		background-image: url('../images/backgrounds/bg-bio.jpg');
+		background-repeat: no-repeat;
+		background-size: auto 100vh;
+		background-position: center calc(2 * #{$slant-height});
+		transform: scale(1.01);
+
+		&.blurred {
+			filter: blur(3px);
+		}
+		&.fixed {
+			position: fixed;
+			top: 0;
+			background-position-y: 0;
+		}
+	}
+
+	&.last-section {
+		height: $bio-height-last;
+		.bg-image:not(.fixed) {
+			background-position-y: $slant-height;
+		}
+	}
+
+	&.navigation-active .bg-image:after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: rgba(5, 59, 63, 0.8);
+	}
+}
+
+.section-stats {
+	margin-top: calc(0px - #{$slant-height});
+	height: $stats-height;
+	clip-path: polygon(
+		0 $slant-height,
+		100% 0,
+		100% 100%,
+		0% 100%
+	);
+
+	&.fixed {
+		.bg-image {
+			position: fixed;
+			top: 0;
+		}
+		.content-overlay {
+			position: fixed;
+			top: 0;
+		}
+	}
+
+	.bg-image {
+		position: relative;
+		top: $slant-height;
+		width: 100%;
+		height: 100vh;
+		background-image: url('../images/backgrounds/bg-stats.jpg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		filter: brightness(60%);
+	}
+
+	.content-overlay {
+		top: $slant-height;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@import 'styles/Intro.scss';
+@import 'styles/Bio.scss';
+@import 'styles/Stats.scss';

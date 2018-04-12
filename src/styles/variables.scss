@@ -1,0 +1,69 @@
+
+$font-main: 'Quicksand', sans-serif;
+$font-color-black: rgb(32, 32, 32);
+$font-color-white: white;
+$link-color: #4848cd;
+
+$slant: 0.2;
+$slant-height: calc(100vh *  #{$slant});
+$intro-height: calc(100vh + #{$slant-height});
+$bio-height: calc(100vh + 2 * #{$slant-height});
+$bio-height-last: calc(100vh + #{$slant-height});
+$stats-height: calc(100vh + #{$slant-height});
+$skills-height: 100vh;
+$experience-height: 110vh;
+
+@mixin shutter-out-horizontal ($bg-color, $fg-color, $font-color) {
+
+	background: $bg-color;
+	transition-property: color;
+	transition-duration: 0.25s;
+	z-index: 0;
+
+	&:before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: $fg-color;
+		transform: scaleX(0);
+		transform-origin: 50%;
+		transition-property: transform;
+		transition-duration: 0.25s;
+		transition-timing-function: ease-out;
+	}
+
+	&:hover, &:focus, &:active {
+		color: $font-color;
+		&:before {
+			transform: scaleX(1);
+		}
+	}
+}
+
+
+@mixin link-underline ($color, $thickness, $gap) {
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: $thickness;
+		bottom: calc(0px - #{$gap});
+		left: 0;
+		background-color: $color;
+		visibility: hidden;
+		transform: scaleX(0);
+		transition: all 0.2s ease-in-out 0s;
+	}
+	&:hover {
+		color: $color !important;
+		&:before {
+			visibility: visible;
+			transform: scaleX(1);
+		}
+	}
+}

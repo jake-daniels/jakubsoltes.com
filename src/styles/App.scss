@@ -1,0 +1,112 @@
+
+@import 'styles/variables.scss';
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: $font-main;
+	color: $font-color-black;
+	input, textarea, button, a{
+		font-family: $font-main;
+	}
+	div {
+		box-sizing: border-box;
+	}
+	h1, h2, h3, h4, h5, h6, label, a, p {
+		margin: 0;
+		padding: 0;
+	}
+	.noselect {
+		-webkit-touch-callout: none; 	/* iOS Safari */
+		-webkit-user-select: none; 		/* Chrome/Safari/Opera */
+		-khtml-user-select: none; 		/* Konqueror */
+		-moz-user-select: none; 		/* Firefox */
+		-ms-user-select: none; 			/* Internet Explorer/Edge */
+		user-select: none; 				/* Non-prefixed version, currently not supported by any browser */
+		cursor: default;
+	}
+	* {
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+	a, a:focus, a:visited, a:hover {
+		color: $link-color;
+	}
+}
+
+.app-page {
+	position: relative;
+}
+
+.page {
+	width: 100%;
+	background: rgb(19, 19, 19);
+}
+
+.section {
+	position: relative;
+	width: 100%;
+	background: rgb(20, 20, 20);
+
+	&.section-intro {
+		z-index: 1;
+	}
+	&.section-bio {
+		z-index: 0;
+	}
+	&.section-stats {
+		z-index: 0;
+	}
+	&.section-skills {
+		z-index: 1;
+	}
+	&.section-experience {
+		z-index: 0;
+	}
+	&.section-footer {
+		z-index: 10;
+	}
+
+	.content-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+	}
+}
+
+.fa-icon {
+	display: block;
+	width: inherit;
+    height: inherit;
+
+	background-image: url('../images/fa-icon.png');
+	background-size: 500%;
+	background-repeat: no-repeat;
+	&.back {
+		background-position: 0 0;
+	}
+	&.backward {
+		background-position: 25% 0;
+	}
+	&.forward {
+		background-position: 50% 0;
+	}
+	&.down {
+		background-position: 75% 0;
+	}
+	&.question {
+		background-position: 100% 0;
+	}
+}
+
+@import 'styles/Me.scss';
+@import 'styles/Work.scss';
+@import 'styles/Hobby.scss';
+@import 'styles/NavBar.scss';
+@import 'styles/Footer.scss';
+@import 'styles/Contact.scss';

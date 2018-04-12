@@ -1,0 +1,88 @@
+
+
+// n is number of stars required
+@function multiple-box-shadow ($n) {
+	$value: '#{random(2000)}px #{random(2000)}px #FFF';
+	@for $i from 2 through $n {
+		$value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+	}
+	@return unquote($value);
+}
+
+
+$shadows-small:  multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big:    multiple-box-shadow(100);
+
+@keyframes animStar {
+	from {
+		transform: translateY(0px);
+	}
+	to {
+		transform: translateY(-2000px)
+	}
+}
+
+.stars {
+	position: relative;
+	left: -50vw;
+}
+
+.stars-1 {
+	width: 1px;
+	height: 1px;
+	background: transparent;
+	box-shadow: $shadows-small;
+	&:after {
+		content: " ";
+		position: absolute;
+		top: 2000px;
+		width: 1px;
+		height: 1px;
+		background: transparent;
+		box-shadow: $shadows-small;
+	}
+}
+.stars-2 {
+	width: 2px;
+	height: 2px;
+	background: transparent;
+	box-shadow: $shadows-medium;
+	&:after {
+		content: " ";
+		position: absolute;
+		top: 2000px;
+		left: 0;
+		width: 2px;
+		height: 2px;
+		background: transparent;
+		box-shadow: $shadows-medium;
+	}
+}
+.stars-3 {
+	width: 3px;
+	height: 3px;
+	background: transparent;
+	box-shadow: $shadows-big;
+	&:after {
+		content: " ";
+		position: absolute;
+		top: 2000px;
+		width: 3px;
+		height: 3px;
+		background: transparent;
+		box-shadow: $shadows-big;
+	}
+}
+
+// Animation
+
+// .stars-1 {
+// 	animation: animStar 100s linear infinite;
+// }
+// .stars-2 {
+// 	animation: animStar 150s linear infinite;
+// }
+// .stars-3 {
+// 	animation: animStar 200s linear infinite;
+// }

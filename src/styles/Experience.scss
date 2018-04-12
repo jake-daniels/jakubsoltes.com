@@ -1,0 +1,395 @@
+
+@import 'styles/variables.scss';
+
+$background: #16161a;
+$baseline-height: 80px;
+$baseline-inner-height: 50px;
+$event-width: 18vw;
+$event-height: 100vh;
+$icon-circle-size: 7vh;
+$space-around-size: 20vh;
+$margin-top: 30vh;
+
+.section-experience {
+	position: relative;
+
+	width: 100%;
+	height: $experience-height;
+	background-color: $background;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	overflow: hidden;
+
+	.bg-image {
+		width: 100%;
+		top: 0;
+		height: $experience-height;
+		min-height: $experience-height;
+		background-image: url('../images/backgrounds/bg-experiences.jpg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		filter: brightness(110%);
+	}
+}
+
+@mixin skill-images() {
+	$step: 100% / 6;
+	$pos-1: 0;
+	$pos-2: 1 * $step;
+	$pos-3: 2 * $step;
+	$pos-4: 3 * $step;
+	$pos-5: 4 * $step;
+	$pos-6: 5 * $step;
+	$pos-7: 100%;
+
+	&.born {background-position: $pos-6 0;}
+	&.start {background-position: $pos-5 0;}
+	&.high-school {background-position: $pos-1 0;}
+	&.i-inventions {background-position: $pos-4 0;}
+	&.fit-vut {background-position: $pos-1 0;}
+	&.inqool {background-position: $pos-3 0;}
+	&.fi-muni {background-position: $pos-1 0;}
+	&.roihunter {background-position: $pos-2 0;}
+	&.now {background-position: $pos-7 0;}
+}
+
+.section-experience .navigation {
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+    height: 10vh;
+    padding: 0 5vh;
+    padding-top: 9vh;
+	.action {
+		cursor: pointer;
+		opacity: 0.5;
+		color: white;
+		font-size: 20px;
+		&:hover {
+			opacity: 1;
+		}
+		.fa-icon {
+			display: inline-block;
+			width: 25px;
+			height: 25px;
+		}
+
+		&.back {
+			float: left;
+			.fa-icon.backward {
+				float: left;
+				margin-right: 15px;
+			}
+		}
+		&.forward {
+			float: right;
+			.fa-icon.forward {
+				float: right;
+				margin-left: 15px;
+			}
+		}
+	}
+}
+
+.section-experience .timeline {
+	width: 100%;
+	height: 100vh;
+	.baseline {
+		position: absolute;
+		top: calc(#{$margin-top} - #{$baseline-height} / 2);
+		width: 100%;
+		height: $baseline-height;
+		background: darken($background, 5%);
+		background: rgba(black, 0.2);
+	}
+	.events {
+		position: absolute;
+		left: 50vw;
+		top: $margin-top;
+		width: 100%;
+		height: 50%;
+
+		display: flex;
+		flex-direction: row;
+
+		transition: transform 0.7s;
+
+		&.active {
+			@mixin shift($i) {
+				$init-shift: calc(0px - #{$event-width} / 2 - 20px);
+				@if ($i == 0) {
+					transform: translateX($init-shift);
+				}
+				@else {
+					$shift: calc(0px + #{$init-shift} - #{$i} * (#{$event-width} + 20px));
+					transform: translateX($shift);
+				}
+			}
+			@mixin space-around($event) {
+				.event {
+					transform: translateX(-$space-around-size);
+				}
+				.event.#{$event} {
+					transform: translateX(0px);
+				}
+				.event.#{$event} ~ .event {
+					transform: translateX($space-around-size);
+				}
+			}
+
+			&.born {
+				@include shift(0);
+				@include space-around(born);
+			}
+			&.start {
+				@include shift(1);
+				@include space-around(start);
+			}
+			&.high-school {
+				@include shift(2);
+				@include space-around(high-school);
+			}
+			&.i-inventions {
+				@include shift(3);
+				@include space-around(i-inventions);
+			}
+			&.fit-vut {
+				@include shift(4);
+				@include space-around(fit-vut);
+			}
+			&.inqool {
+				@include shift(5);
+				@include space-around(inqool);
+			}
+			&.fi-muni {
+				@include shift(6);
+				@include space-around(fi-muni);
+			}
+			&.roihunter {
+				@include shift(7);
+				@include space-around(roihunter);
+			}
+			&.now {
+				@include shift(8);
+				@include space-around(now);
+			}
+		}
+	}
+}
+
+@mixin applyEventColor ($color) {
+	.arrow .half {
+		background-color: $color;
+	}
+	.point {
+		border-color: $color;
+	}
+	.icon-circle {
+		background-color: $color;
+	}
+	.content {
+		color: lighten($color, 15%);
+	}
+}
+
+.section-experience .timeline .event {
+	position: relative;
+	margin-top: calc(0px - #{$event-height} / 2);
+	margin-right: 20px;
+
+	min-width: $event-width;
+	width: $event-width;
+	height: $event-height;
+	transition: all 1s;
+
+	$color-1: rgb(33, 153, 73);
+	$color-2: rgb(42, 86, 153);
+	$color-3: rgb(136, 20, 172);
+	$color-4: rgb(221, 114, 42);
+	$color-5: rgb(25, 155, 160);
+	$color-6: rgb(189, 39, 39);
+
+	&.born {
+		@include applyEventColor($color-5);
+	}
+	&.start {
+		@include applyEventColor($color-3);
+	}
+	&.high-school {
+		@include applyEventColor($color-2);
+	}
+	&.i-inventions {
+		@include applyEventColor($color-1);
+	}
+	&.fit-vut {
+		@include applyEventColor($color-4);
+	}
+	&.inqool {
+		@include applyEventColor($color-6);
+	}
+	&.fi-muni {
+		@include applyEventColor($color-3);
+	}
+	&.roihunter {
+		@include applyEventColor($color-2);
+	}
+	&.now {
+		@include applyEventColor($color-5);
+	}
+
+	&.active {
+		.content {
+			opacity: 1;
+			transition: width 0.2s;
+			width: 170%;
+			left: -35%;
+		}
+		.arrow .half {
+			border-color: rgba(white, 0.2);
+		}
+		.icon-circle {
+			transform: scale(1.3);
+			border: solid 2px rgba(white, 0.2);
+		}
+	}
+
+	.arrow {
+		cursor: pointer;
+		width: 100%;
+		height: $baseline-inner-height;
+		position: absolute;
+		top: calc(50% - #{$baseline-inner-height} / 2);
+		&:hover {
+			.half {border-color: rgba(white, 0.2);}
+			& + .content {opacity: 1;}
+		}
+		.half {
+			width: 100%;
+			height: 50%;
+			background: black;
+			border-left: solid 10px rgba(black, 0.2);
+			border-right: solid 10px rgba(black, 0.2);
+			&.top {transform: skewX(45deg)}
+			&.bottom {transform: skewX(-45deg)}
+		}
+		.year {
+			position: absolute;
+			top: 25%;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			font-size: 20px;
+			color: white;
+		}
+	}
+
+	.icon-circle {
+		cursor: pointer;
+		position: absolute;
+		left: calc(50% - #{$icon-circle-size} / 2);
+		top: calc(50% - #{$icon-circle-size} * 2);
+
+		width: $icon-circle-size;
+		height: $icon-circle-size;
+		border-radius: 50%;
+		transition: all 0.5s;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			& + .arrow {
+				.half {border-color: rgba(white, 0.2);}
+				& + .content {opacity: 1;}
+			}
+		}
+
+		.icon {
+			cursor: pointer;
+			display: block;
+			width: 60%;
+			height: 60%;
+			background-image: url('../images/experiences.png');
+			background-size: 700%;
+			background-repeat: no-repeat;
+			@include skill-images();
+			margin-left: 1px;
+		}
+	}
+
+	.content {
+		opacity: 0.5;
+		position: absolute;
+		top: calc(50% + #{$baseline-height} / 2);
+		padding-top: 20px;
+		text-align: center;
+		width: 100%;
+		max-height: 60vh;
+		.title {
+			font-size: 26px;
+			margin-bottom: 20px;
+		}
+		.subtitle {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		.description {
+			color: rgba(white, 0.9);
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 30px;
+		}
+		a {
+			font-weight: 500;
+			color: white !important;
+		}
+	}
+}
+
+.section-experience {
+	.next-section-cta {
+		z-index: 1;
+		position: absolute;
+		bottom: 0;
+		left: 100px;
+		display: flex;
+		flex-direction: row;
+
+		.info {
+			color: white;
+			margin-left: 20px;
+			font-size: 26px;
+			font-weight: 200;
+			display: flex;
+			text-align: center;
+			align-items: center;
+			transition: transform 2s;
+			transition-delay: 0.5s;
+		}
+
+		.arrow {
+			$self-size: 120px;
+
+			width: $self-size;
+			height: $self-size;
+			display: flex;
+			justify-content: center;
+			padding-top: 0px;
+
+			background: rgba(white, 0.2);
+			.icon {
+				font-size: 100px;
+				color: white;
+			}
+			cursor: pointer;
+			transition: transform 2s;
+			transition-delay: 0.5s;
+		}
+	}
+}
+

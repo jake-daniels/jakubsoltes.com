@@ -1,0 +1,316 @@
+
+@import 'styles/variables.scss';
+@import 'styles/NightSky.scss';
+
+
+$background: #0b131d;
+
+$title-size: 20vh;
+$orb-size: 70vh;
+$orb-radius: calc(#{$orb-size} / 2);
+
+$skill-detail-size: 50vh;
+$skill-detail-radius: calc(#{$skill-detail-size} / 2);
+$skill-detail-position: calc(#{$title-size} + #{$orb-radius} - #{$skill-detail-radius});
+
+$orb-color: rgb(20, 109, 136);
+$orb-core-color: $background;
+$orb-shift: -35vh;
+$detail-shift: 35vh;
+
+@keyframes spin-cw {100% {transform: rotate(360deg)}}
+@keyframes spin-ccw {100% {transform: rotate(-360deg)}}
+
+@mixin skill-images() {
+	&.html {background-position: 0 0;}
+	&.css {background-position: 10% 0;}
+	&.js {background-position: 20% 0;}
+	&.react {background-position: 30% 0;}
+	&.redux {background-position: 40% 0;}
+	&.dev-basics {background-position: 50% 0;}
+	&.testing {background-position: 60% 0;}
+	&.graphic-design {background-position: 70% 0;}
+	&.git {background-position: 80% 0;}
+	&.architecture {background-position: 90% 0;}
+	&.default {background-position: 100% 0;}
+}
+
+.section-skills {
+	position: relative;
+
+	width: 100%;
+	height: $skills-height;
+	background-color: $background;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	& * {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	overflow: hidden;
+
+	.main-title {
+		height: $title-size;
+		width: 100%;
+		font-size: 50px;
+		font-weight: 200;
+		color: white;
+	}
+}
+
+.section-skills .orb {
+	width: $orb-size;
+	height: $orb-size;
+	border-radius: 50%;
+	z-index: 1;
+	background-color: transparent;
+
+	position: relative;
+	left: 0;
+
+	transition: transform 1s;
+	&.skill-active{
+		transform: translateX($orb-shift);
+	}
+}
+
+.section-skills .orb .orbitals {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+
+	@mixin orbit-setup ($size, $animation, $opacity) {
+		top: calc((100% - #{size}) / 2);
+		width: $size;
+		height: $size;
+		animation: $animation;
+		opacity: $opacity;
+	}
+
+	.orbit {
+		position: absolute;
+		background: transparent;
+		border: solid 2px white;
+		border-radius: 50%;
+		.orbit-point {
+			position: absolute;
+
+			$size: 10px;
+			width: $size;
+			height: $size;
+
+			left: 50%;
+			&.top {top: - ($size / 2) - 1px;}
+			&.right {top: calc(50% - #{$size} / 2); left: calc(100% - #{$size} / 2 + 1px);}
+			&.bottom {bottom: - ($size / 2) - 1px;}
+			&.left {top: calc(50% - #{$size} / 2); left: - ($size / 2) - 1px;}
+
+			border-radius: 50%;
+			background-color: white;
+		}
+		&:nth-child(1) {
+			@include orbit-setup(100%, spin-cw 50s linear infinite, 0.1);
+		}
+		&:nth-child(2) {
+			@include orbit-setup(94%, spin-ccw 40s linear infinite, 0.3);
+		}
+		&:nth-child(3) {
+			@include orbit-setup(88%, spin-cw 20s linear infinite, 0.4);
+			.orbit-point.left, .orbit-point.right {display: none;}
+		}
+	}
+}
+
+.section-skills .orb .orb-fan {
+	width: 80%;
+	height: 80%;
+	border-radius: 50%;
+	position: relative;
+
+	.orb-segments, .orb-lines {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	.orb-segments {
+		background: $orb-color;
+		border: solid 5px rgba(white, 0.2);
+		border-radius: 50%;
+		.segment {
+			cursor: pointer;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			.icon {
+				position: absolute;
+				top: 32%;
+				left: 6%;
+				width: 6vh;
+				height: 6vh;
+
+				background-image: url('../images/skills.png');
+				background-size: 1100%;
+				background-repeat: no-repeat;
+				@include skill-images();
+
+				pointer-events: all;
+				transform: rotate(-72deg);
+				&:hover {
+					transform: rotate(-72deg) scale(1.2);
+				}
+			}
+		}
+		&:after {
+			content: '';
+			width: calc(60% + 15px);
+			height: calc(60% + 15px);
+			background: rgba(black, 0.3);
+			border-radius: 50%;
+			position: absolute;
+		}
+	}
+
+	.orb-lines {
+		pointer-events: none;
+		.line {
+			position: absolute;
+			width: 100%;
+			height: 5px;
+			background-color: $orb-core-color;
+			transform-origin: 50% 50%;
+		}
+	}
+}
+
+.section-skills .orb .orb-core {
+	z-index: 3;
+	width: 60%;
+	height: 60%;
+	border-radius: 50%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: $orb-core-color;
+
+	&.active {
+		.logo {
+			background-image: url('../images/skills.png');
+			background-size: 1100%;
+			opacity: 1;
+		}
+	}
+
+	.logo-wrapper {
+		width: 97%;
+		height: 97%;
+		border: solid 3px darken($orb-color, 10%);
+		border-radius: 50%;
+	}
+
+	.logo {
+		width: 15vh;
+		height: 15vh;
+		background-image: url('../images/skills.png');
+		background-size: 1100%;
+		background-repeat: no-repeat;
+		background-position: 100% 0;
+
+		opacity: 0.2;
+		transition: opacity 1s;
+
+		@include skill-images();
+	}
+}
+
+.section-skills .skill-detail {
+	position: absolute;
+	top: $skill-detail-position;
+	left: calc(50% - #{$skill-detail-radius});
+
+	width: $skill-detail-size;
+	height: $skill-detail-size;
+
+	color: white;
+	background: rgba($orb-color, 0.5);
+	border-radius: 50%;
+
+	transition: transform 1s;
+	&.active {
+		transform: translateX($detail-shift);
+	}
+
+	.content {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 40px;
+		transition: opacity 0.5s;
+
+		.title {
+			font-size: 26px;
+			font-weight: 400;
+			margin-bottom: 30px;
+		}
+		.description {
+			font-size: 16px;
+			text-align: center;
+			line-height: 26px;
+			font-weight: 300;
+		}
+	}
+}
+
+.section-skills .next-section-cta {
+	z-index: 1;
+	position: absolute;
+	bottom: 0;
+	right: 6vw;
+
+	.info {
+		color: white;
+		margin-right: 20px;
+		font-size: 22px;
+		font-weight: 200;
+	}
+
+	.arrow {
+		cursor: pointer;
+		$self-size: 7vw;
+
+		bottom: calc(0px - #{$slant-height});
+
+		width: $self-size;
+		height: $self-size;
+
+		display: flex;
+		justify-content: center;
+
+		background: rgba(white, 0.2);
+		.icon {
+			margin-top: 0.5vw;
+			height: 3vw;
+			width: 3vw;
+			color: white;
+			opacity: 0.8;
+		}
+
+		&:hover {
+			.icon {
+				opacity: 1;
+				transform: translateY(10px);
+			}
+		}
+	}
+
+}
