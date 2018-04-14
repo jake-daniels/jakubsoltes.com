@@ -50,7 +50,13 @@ export default class Contact extends React.PureComponent<IProps, IState> {
 	content: Element | null = null
 
 	componentDidMount () {
-		setTimeout(() => findDOMNode(this.content as Element).classList.add('visible'), 0)
+		setTimeout(() => {
+			const ref = this.content as Element
+			const node = findDOMNode(ref) as Element
+			if (node) {
+				node.classList.add('visible')
+			}
+		}, 0)
 	}
 
 	setFieldValue = (id: EField, value: any) => {

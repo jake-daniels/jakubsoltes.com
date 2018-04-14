@@ -43,11 +43,13 @@
 				background-position: -$size 0;
 			}
 		}
-		.link {
-			position: relative;
-			color: rgba(white, 0.8);
-			text-decoration: none;
-			@include link-underline(white, 1px, 2px);
+	}
+
+	.link {
+		position: relative;
+		color: rgba(white, 0.8);
+		&:hover {
+			color: white;
 		}
 	}
 }

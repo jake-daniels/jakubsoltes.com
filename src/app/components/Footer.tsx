@@ -20,12 +20,12 @@ export default class Footer extends React.PureComponent {
 				</p>
 
 				<p className='line'>
-					No animals were harmed in making of this website.
+					Created with ♥ in VS Code.
+					Source code hosted on <a className='link' target='_blank' href='https://github.com/jake-daniels/jakubsoltes.com'>GitHub</a>.
 				</p>
 
 				<p className='line'>
-					Created with ♥ in VS Code.
-					Source code hosted on <a className='link' target='_blank' href='https://github.com/jake-daniels/jakubsoltes.com'>GitHub</a>.
+					No animals were harmed in making of this website.
 				</p>
 
 			</div>
