@@ -1,10 +1,8 @@
 
 import React from 'react'
-
 import Skills, {ESkill} from 'app/components/Skills'
 import Experience, {EEvent} from 'app/components/Experience'
 
-const SCROLL_TIME = 750
 
 interface IProps extends IRouterProps {}
 
@@ -34,7 +32,7 @@ export default class Work extends React.PureComponent<IProps, IState> {
 	}
 
 	showExperiences = () => {
-		PageScroll.scroll(PageScroll.getPositions().Experience, {time: SCROLL_TIME})
+		PageScroll.scroll(PageScroll.getPositions().Experience, {time: AppSettings.DefaultScrollTime})
 	}
 
 	render () {

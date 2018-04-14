@@ -16,7 +16,9 @@ declare global {
 
 	function cn (classes: Object): string
 
-	const APP: {
+	const PageScroll: IPageScroll
+
+	const AppSettings: {
 		Routes: {
 			Me: string,
 			Work: string,
@@ -28,16 +30,15 @@ declare global {
 			templateID: string,
 			myAddress: string,
 		},
+		DefaultScrollTime: number,
 	}
-
-	const PageScroll: IPageScroll
 }
 
 _global.cn = classNames
 
 _global.PageScroll = new PageScroll()
 
-_global.APP = {
+_global.AppSettings = {
 	Routes: {
 		Me: '/',
 		Work: '/what-i-do',
@@ -49,4 +50,5 @@ _global.APP = {
 		templateID: 'contact_template',
 		myAddress: 'jakub@jakubsoltes.com',
 	},
+	DefaultScrollTime: 750,
 }

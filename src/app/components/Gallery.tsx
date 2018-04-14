@@ -11,7 +11,8 @@ const SLIDER_SETTINGS = {
 	slidesToScroll: 1,
 }
 
-const IMAGE_PATHS = Array(9)
+const IMAGES_COUNT = 9
+const IMAGES_PATHS = Array(IMAGES_COUNT)
 	.fill(null)
 	.map((_, i) => require(`../../images/gallery/${i + 1}.jpg`))
 
@@ -21,7 +22,7 @@ interface IProps {
 
 export default class Gallery extends React.PureComponent<IProps> {
 
-	slider: Slider | null = null
+	slider = React.createRef<Slider>()
 
 	componentDidMount () {
 		document.body.style.overflow = 'hidden'
@@ -39,10 +40,10 @@ export default class Gallery extends React.PureComponent<IProps> {
 			this.props.onHide()
 		}
 		if (e.key === 'ArrowLeft') {
-			this.slider.slickPrev()
+			this.slider.current.slickPrev()
 		}
 		if (e.key === 'ArrowRight') {
-			this.slider.slickNext()
+			this.slider.current.slickNext()
 		}
 	}
 
@@ -57,8 +58,8 @@ export default class Gallery extends React.PureComponent<IProps> {
 				</div>
 
 				<div className='slider'>
-					<Slider {...SLIDER_SETTINGS} ref={(ref) => this.slider = ref}>
-						{IMAGE_PATHS.map((path, i) => (
+					<Slider {...SLIDER_SETTINGS} ref={this.slider}>
+						{IMAGES_PATHS.map((path, i) => (
 							<div key={i} className='item'>
 								<img src={path}/>
 							</div>

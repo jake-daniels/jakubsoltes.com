@@ -32,14 +32,14 @@ export default class Page extends React.Component<{}, IState> {
 
 	sendMessage = (data: IContactData) => {
 		EmailJS.send(
-			APP.Email.serviceID,
-			APP.Email.templateID,
+			AppSettings.Email.serviceID,
+			AppSettings.Email.templateID,
 			{
 				from_email: data.email,
 				from_name: data.name,
 				message_body: data.message,
 			},
-			APP.Email.userID,
+			AppSettings.Email.userID,
 		)
 	}
 
@@ -67,9 +67,9 @@ export default class Page extends React.Component<{}, IState> {
 			<div className='app-page'>
 				<NavBar showContact={this.showContact}/>
 				<Switch>
-					<Route exact={true} path={APP.Routes.Me} render={renderMePage} />
-					<Route exact={true} path={APP.Routes.Work} component={Work} />
-					<Route exact={true} path={APP.Routes.Hobby} component={Hobby} />
+					<Route exact={true} path={AppSettings.Routes.Me} render={renderMePage} />
+					<Route exact={true} path={AppSettings.Routes.Work} component={Work} />
+					<Route exact={true} path={AppSettings.Routes.Hobby} component={Hobby} />
 					<Route render={renderMePage} />
 				</Switch>
 				<Footer />

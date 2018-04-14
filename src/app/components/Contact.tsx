@@ -1,6 +1,5 @@
 
 import React from 'react'
-import {findDOMNode} from 'react-dom'
 
 enum EField {
 	Name = 'name',
@@ -33,6 +32,8 @@ interface IProps {
 
 export default class Contact extends React.PureComponent<IProps, IState> {
 
+	content = React.createRef<HTMLDivElement>()
+
 	state: IState = {
 		values: {
 			name: '',
@@ -47,15 +48,9 @@ export default class Contact extends React.PureComponent<IProps, IState> {
 		isWarningVisible: false,
 	}
 
-	content: Element | null = null
-
 	componentDidMount () {
 		setTimeout(() => {
-			const ref = this.content as Element
-			const node = findDOMNode(ref) as Element
-			if (node) {
-				node.classList.add('visible')
-			}
+			this.content.current!.classList.add('visible')
 		}, 0)
 	}
 
@@ -215,7 +210,7 @@ export default class Contact extends React.PureComponent<IProps, IState> {
 				</p>
 				<p>
 					If you prefer to contact me directly,
-					send an email to <a href={`mailto:${APP.Email.myAddress}`}>{APP.Email.myAddress}</a>.
+					send an email to <a href={`mailto:${AppSettings.Email.myAddress}`}>{AppSettings.Email.myAddress}</a>.
 				</p>
 			</div>
 		)
@@ -231,7 +226,7 @@ export default class Contact extends React.PureComponent<IProps, IState> {
 						<i className='fa-icon back' />
 					</div>
 				</div>
-				<div className='content' ref={(ref) => this.content = ref}>
+				<div className='content' ref={this.content}>
 					<this.InfoPanel/>
 					<this.FormPanel/>
 				</div>

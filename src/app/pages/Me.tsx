@@ -7,8 +7,6 @@ import Intro from 'app/components/Intro'
 import Bio, {Screen as BioScreen, NavigationActionType} from 'app/components/Bio'
 import Stats, {EStat} from 'app/components/Stats'
 
-const SCROLL_TIME = 750
-
 
 interface IProps extends IRouterProps {
 	downloadCV: () => void,
@@ -54,8 +52,8 @@ export default class Me extends React.PureComponent<IProps, IState> {
 
 	inspectLocation = (location: any) => {
 		// clear URL
-		if (location.pathname !== APP.Routes.Me) {
-			this.props.history.push({pathname: APP.Routes.Me})
+		if (location.pathname !== AppSettings.Routes.Me) {
+			this.props.history.push({pathname: AppSettings.Routes.Me})
 		}
 
 		const {bio, stats} = URI.parseQuery(location.search)
@@ -101,7 +99,7 @@ export default class Me extends React.PureComponent<IProps, IState> {
 	// Navigation
 
 	showBio = () => {
-		PageScroll.scroll(PageScroll.getPositions().Bio, {time: SCROLL_TIME})
+		PageScroll.scroll(PageScroll.getPositions().Bio, {time: AppSettings.DefaultScrollTime})
 	}
 
 	setBioScreen = (screen: BioScreen) => {
@@ -137,15 +135,15 @@ export default class Me extends React.PureComponent<IProps, IState> {
 			search: URI(location.search).setSearch({stats: true}).search(),
 		})
 
-		PageScroll.scroll(PageScroll.getPositions().Stats, {time: SCROLL_TIME})
+		PageScroll.scroll(PageScroll.getPositions().Stats, {time: AppSettings.DefaultScrollTime})
 	}
 
 	showWork = () => {
-		this.props.history.push(APP.Routes.Work)
+		this.props.history.push(AppSettings.Routes.Work)
 	}
 
 	showHobby = () => {
-		this.props.history.push(APP.Routes.Hobby)
+		this.props.history.push(AppSettings.Routes.Hobby)
 	}
 
 	downloadCV = () => {

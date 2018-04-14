@@ -30,7 +30,6 @@ export default class Hobby extends React.PureComponent<IProps> {
 
 	onHexagonClicked = (type: EHexagonType, id: EHobby) => {
 		if (type === EHexagonType.Color && id === EHobby.Draw) {
-			PageScroll.scroll(PageScroll.getPositions().Hobby)
 			this.props.showGallery()
 		}
 	}

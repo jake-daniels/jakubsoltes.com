@@ -3,7 +3,8 @@ import React from 'react'
 import Hobbies from 'app/components/Hobbies'
 
 
-interface IProps {}
+interface IProps extends IRouterProps {}
+
 interface IState {
 	isHobbiesFixed: boolean,
 	isGalleryVisible: boolean,
@@ -34,7 +35,10 @@ export default class Hobby extends React.PureComponent<IProps, IState> {
 		}
 	}
 
-	showGallery = () => this.setState({isGalleryVisible: true})
+	showGallery = () => {
+		PageScroll.scroll(PageScroll.getPositions().Hobby)
+		this.setState({isGalleryVisible: true})
+	}
 
 	closeGallery = () => this.setState({isGalleryVisible: false})
 

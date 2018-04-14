@@ -15,19 +15,19 @@ export default class NavBar extends React.PureComponent<IProps> {
 			<div className='navbar'>
 
 				<label className='action'>
-					<Link to={APP.Routes.Me}> Me </Link>
+					<Link to={AppSettings.Routes.Me}> Me </Link>
 				</label>
 
 				<span className='separator'>/</span>
 
 				<label className='action'>
-					<Link to={APP.Routes.Work}> Work </Link>
+					<Link to={AppSettings.Routes.Work}> Work </Link>
 				</label>
 
 				<span className='separator'>/</span>
 
 				<label className='action'>
-					<Link to={APP.Routes.Hobby}> Hobby </Link>
+					<Link to={AppSettings.Routes.Hobby}> Hobby </Link>
 				</label>
 
 				<span className='separator'>/</span>
