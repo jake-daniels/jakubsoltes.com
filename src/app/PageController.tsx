@@ -13,9 +13,6 @@ import NavBar from 'app/components/NavBar'
 import Footer from 'app/components/Footer'
 import Contact, {IContactData} from 'app/components/Contact'
 
-import CV_PATH from '../files/Jakub-Soltes-CV.pdf'
-const CV_FILENAME = 'Jakub-Soltes-CV'
-
 interface IState {
 	isContactVisible: boolean,
 }
@@ -45,8 +42,8 @@ export default class Page extends React.Component<{}, IState> {
 
 	downloadCV = () => {
 		const link = document.createElement('a')
-		link.href = CV_PATH
-		link.download = CV_FILENAME
+		link.href = AppSettings.CVPath
+		link.download = AppSettings.CVFilename
 		document.body.appendChild(link)
 		link.click()
 		document.body.removeChild(link)

@@ -2,6 +2,7 @@
 export {}
 
 import {classNames, PageScroll, IPageScroll} from 'app/domain/utility'
+import CV_PATH from './files/Jakub-Soltes-CV.pdf'
 
 const _global = (window as any)
 
@@ -31,6 +32,8 @@ declare global {
 			myAddress: string,
 		},
 		DefaultScrollTime: number,
+		CVPath: string,
+		CVFilename: string,
 	}
 }
 
@@ -51,4 +54,6 @@ _global.AppSettings = {
 		myAddress: 'jakub@jakubsoltes.com',
 	},
 	DefaultScrollTime: 750,
+	CVPath: CV_PATH,
+	CVFilename: 'Jakub-Soltes-CV',
 }
