@@ -14,15 +14,6 @@ $shadows-small:  multiple-box-shadow(700);
 $shadows-medium: multiple-box-shadow(200);
 $shadows-big:    multiple-box-shadow(100);
 
-@keyframes animStar {
-	from {
-		transform: translateY(0px);
-	}
-	to {
-		transform: translateY(-2000px)
-	}
-}
-
 .stars {
 	position: relative;
 	left: -50vw;
@@ -74,15 +65,3 @@ $shadows-big:    multiple-box-shadow(100);
 		box-shadow: $shadows-big;
 	}
 }
-
-// Animation
-
-// .stars-1 {
-// 	animation: animStar 100s linear infinite;
-// }
-// .stars-2 {
-// 	animation: animStar 150s linear infinite;
-// }
-// .stars-3 {
-// 	animation: animStar 200s linear infinite;
-// }

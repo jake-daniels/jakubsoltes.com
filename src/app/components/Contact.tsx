@@ -111,8 +111,9 @@ export default class Contact extends React.PureComponent<IProps, IState> {
 
 		return (
 			<div className='field name'>
-				<label> Name </label>
+				<label htmlFor='name-input'> Name </label>
 				<input
+					id='name-input'
 					className={cn({
 						'field-input': true,
 						'valid': validity[id] === true,
@@ -134,8 +135,9 @@ export default class Contact extends React.PureComponent<IProps, IState> {
 
 		return (
 			<div className='field email'>
-				<label> Email </label>
+				<label htmlFor='email-input'> Email </label>
 				<input
+					id='email-input'
 					className={cn({
 						'field-input': true,
 						'valid': validity[id] === true,
@@ -157,8 +159,9 @@ export default class Contact extends React.PureComponent<IProps, IState> {
 
 		return (
 			<div className='field message'>
-				<label> Message </label>
+				<label htmlFor='message-input'> Message </label>
 				<textarea
+					id='message-input'
 					className={cn({
 						'field-input': true,
 						'valid': validity[id] === true,

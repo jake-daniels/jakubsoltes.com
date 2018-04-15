@@ -1,6 +1,7 @@
 
 import React from 'react'
 import {EventsConfig, IEvent, EEvent} from 'app/domain/experience-config'
+import $ from 'jquery'
 
 export {EEvent}
 
@@ -10,6 +11,55 @@ interface IProps {
 }
 
 export default class Experience extends React.PureComponent<IProps> {
+
+	scrollX: number = 0
+
+	componentDidMount () {
+		$('.section-experience').bind('mousewheel', this.onMouseWheel)
+	}
+
+	componentWillUnmount () {
+		$('.section-experience').unbind('mousewheel', this.onMouseWheel)
+	}
+
+	onMouseWheel = (e) => {
+		const SCROLL_THRESHOLD = 120
+
+		const delta = (e.shiftKey)
+			? e.originalEvent.wheelDelta
+			: e.originalEvent.wheelDeltaX
+
+		this.scrollX += delta
+
+		if (Math.abs(this.scrollX) >= SCROLL_THRESHOLD) {
+			if (this.scrollX > 0) {
+				this.showPrevious()
+			} else {
+				this.showNext()
+			}
+			this.scrollX = 0
+		}
+	}
+
+	showPrevious = () => {
+		const {activeEvent, focusEvent} = this.props
+
+		const activeEventIndex = EventsConfig.findIndex((event) => event.id === activeEvent)
+		if (activeEventIndex > 0) {
+			const previousEvent = EventsConfig[activeEventIndex - 1]
+			focusEvent(previousEvent.id)
+		}
+	}
+
+	showNext = () => {
+		const {activeEvent, focusEvent} = this.props
+
+		const activeEventIndex = EventsConfig.findIndex((event) => event.id === activeEvent)
+		if (activeEventIndex < EventsConfig.length - 1) {
+			const nextEvent = EventsConfig[activeEventIndex + 1]
+			focusEvent(nextEvent.id)
+		}
+	}
 
 	showStart = () => {
 		const firstEvent = EventsConfig[0]
