@@ -49,7 +49,7 @@ export const HobbyConfig = [
 				After hours spent sitting behind the screen, nothing can refresh me
 				as much as exercising. I love playing badminton for it's dynamic nature.
 				I regularly swim and run because it calms me.
-				And when I want to release excessive energy, weightlifting is a way to go.
+				And when I want to release excessive energy, weight-lifting is a way to go.
 			</span>
 		),
 	},
@@ -61,7 +61,7 @@ export const HobbyConfig = [
 				I play the guitar since I was 15 when I started a high school rock band.
 				Even though I don't have much time to play now,
 				my passion for music roots deep in my soul.
-				I plan to learn to play on piano in the future.
+				In the future, I would like to learn to play on piano.
 			</span>
 		),
 	},
@@ -70,8 +70,8 @@ export const HobbyConfig = [
 		title: 'I chill',
 		description: (
 			<span>
-				My favorite way of relax are long walks with my wife.
-				And when we don't feel like doing anything, we  cook some food and watch a movie.
+				My favorite way of relax are long walks with my girlfriend.
+				And when we don't feel like doing anything, we cook some food and watch a movie.
 				I also like to play chess inspite of being terrible at it
 				and I never say no to a good read.
 			</span>

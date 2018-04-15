@@ -11,6 +11,7 @@ const Links = {
 	MUNI: <Link href='https://www.muni.cz/'>Masaryk University</Link>,
 	SSME: <Link href='http://ssme.fi.muni.cz/en/student/about-ssme'>Service science, Management and Engineering</Link>,
 	ROIHunter: <Link href='https://www.roihunter.com/'>ROI Hunter</Link>,
+	AsyncRender: <Link href='https://reactjs.org/blog/2018/03/01/sneak-peek-beyond-react-16.html'>Async Rendering</Link>,
 	ReactNative: <Link href='https://facebook.github.io/react-native/'>React Native</Link>,
 	MobX: <Link href='https://mobx.js.org/'>MobX</Link>,
 	ReduxSaga: <Link href='https://redux-saga.js.org/'>Redux-Saga</Link>,
@@ -50,11 +51,8 @@ export const EventsConfig: IEvent[] = [
 		title: 'It all started here...',
 		description: (
 			<span>
-				Born too late to explore the Earth,
-				born too soon to explore the Universe.
-				Born just in time to panic about next release.
-				The year, when first public web page was created.
-				Also the year, when future web developer was born.
+				The year, when first public web page was created.<br/>
+				Also the year, when future web developer was born.<br/>
 				Coincidence? I don't think so.
 			</span>
 		),
@@ -79,7 +77,7 @@ export const EventsConfig: IEvent[] = [
 		title: 'High school finished',
 		description: (
 			<span>
-				Luckily, the high school I visited gives the students the opportunity
+				Luckily, the high school I visited gives the students an opportunity
 				to choose their field of focus. For me, the choice was obvious.
 				In my IT lectures, I learned basics of Pascal, Visual Basic and C.
 			</span>
@@ -88,14 +86,14 @@ export const EventsConfig: IEvent[] = [
 	{
 		id: EEvent.IInventions,
 		year: 2010,
-		title: '.NET Developer',
+		title: 'Software Developer',
 		subtitle: (
-			<span>I-inventions</span>
+			<span>i-Inventions</span>
 		),
 		description: (
 			<span>
-				Right after I started college, I decided to gain some real work experience.
-				I was hired as a C# developer and I was working on desktop application
+				Right after I started a college, I decided to gain some real work experience.
+				I was hired as a C# developer and I worked on desktop application
 				specialized on computer vision. I learned a lot about software design and architecture principles.
 				Martin Fowler has became my hero back then.
 			</span>
@@ -112,8 +110,8 @@ export const EventsConfig: IEvent[] = [
 		),
 		description: (
 			<span>
-				My bachelor studies gave me great understanding of how information technologies work.
-				I tried over 10 different programming languages and aquired a broad overview in different fields of IT.
+				My bachelor studies gave me a great understanding of how information technologies work.
+				I tried over 10 different programming languages and acquired a broad overview in different fields of IT.
 				As my bachelor thesis I developed an application for tree stability measurement.
 			</span>
 		),
@@ -121,7 +119,7 @@ export const EventsConfig: IEvent[] = [
 	{
 		id: EEvent.InQool,
 		year: 2014,
-		title: 'Product Analyst and Web Developer',
+		title: 'Front-end Developer & Product Analyst',
 		subtitle: (
 			<span>
 				{Links.inQool}
@@ -129,11 +127,11 @@ export const EventsConfig: IEvent[] = [
 		),
 		description: (
 			<span>
-				This company really pushed me forward and let me find out
+				This company really pushed me forward. They let me find out
 				what are my strengths and what I should focus on.
 				After several minor projects I was given an opportunity
-				to work on {Links.ARTSTAQ} -
-				an awesome project, which is trying to change the way how the artworks are traded.
+				to work on {Links.ARTSTAQ} - an awesome project,
+				which tries to establish a new trend in art trading.
 				After the initial phase as the product analyst
 				I became the lead web developer of this project.
 				I mastered React and Redux and improved my software architecture skills.
@@ -162,7 +160,7 @@ export const EventsConfig: IEvent[] = [
 	{
 		id: EEvent.RoiHunter,
 		year: 2016,
-		title: 'Web Developer',
+		title: 'Senior Front-end Developer',
 		subtitle: (
 			<span>
 				{Links.ROIHunter}
@@ -175,7 +173,7 @@ export const EventsConfig: IEvent[] = [
 				Right after I gained required knowledge about domain,
 				I could start helping with improvement of platform's architecture.
 				I leared a lot about building fairly large web application.
-				For the last few months I am responsible for standalone module,
+				Since the start of this year I am responsible for standalone module,
 				which serves as an editor of image templates for Facebook ads.
 			</span>
 		),
@@ -189,14 +187,14 @@ export const EventsConfig: IEvent[] = [
 		),
 		description: (
 			<span>
-				I want to explore new technologies that offer great developer experience.
+				Right now I'm quite excited about {Links.AsyncRender} in React.
 				As the mobile platform is on the rise, {Links.ReactNative} could be a good choice.
-				I'm curious about {Links.MobX}as an alternative to Redux from small projects.
-				I wanted to take a look on {Links.ReduxSaga} and {Links.RxJS} for a long time.
+				I'm curious about {Links.MobX} as an alternative to Redux from small projects.
+				I plan to take a look on {Links.ReduxSaga} and {Links.RxJS} for some time now.
 				{Links.GraphQL} really got my attention together with {Links.Relay} and {Links.Apollo} as the client-side solutions.
 				I've never had the need to use serve-side rendering, but {Links.NEXTjs} looks promising.
-				I would like to dive into {Links.ProgressiveWebApps} and {Links.WebSockets}.
-				Or maybe I could move much further, because quantum computing is on the rise.
+				I would like to dive more into {Links.ProgressiveWebApps} and {Links.WebSockets}.
+				Basically, I want to explore new technologies that solves real issues and offer great developer experience.
 			</span>
 		),
 	},

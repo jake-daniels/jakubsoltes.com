@@ -38,7 +38,7 @@ export default class Bio extends React.PureComponent<IProps> {
 				<p>
 					What differs me from others is my <br/>
 					multi-disciplined approach to work.<br/>
-					Besides development, I have experience with graphic design, product analysis and project management.
+					Besides development, I have experience with graphic design, product analysis and project management.<br/>
 					I like to explore new technologies and I'm always for a good team-work.
 				</p>
 				<span className='cta-link' onClick={() => setScreen(Screen.Navigation)}>

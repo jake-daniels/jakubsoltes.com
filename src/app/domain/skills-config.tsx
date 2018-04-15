@@ -27,9 +27,8 @@ export const SkillsConfig = [
 		description: (
 			<span>
 				HTML represents the backbone of every web application.
-				It matured over time and the latest HTML5 revealed
-				the true power of this technology. Every web developer works
-				with it on daily basis and I'm not an exception.
+				It matured over time and the latest HTML5 revealed the true power of this technology.
+				Every web developer works with it on daily basis and I'm not an exception.
 			</span>
 		),
 	},
@@ -39,8 +38,8 @@ export const SkillsConfig = [
 		description: (
 			<span>
 				{'"You are the {CSS} to my <HTML/>"'} says the popular t-shirt.
-				Well, I'm more of a JS to your HTML, but I don't mind styling components.
-				Actually, with CSS3 features it's fun and a pleasant break from complex logic in JavaScript.
+				Well, I'm more of a JS to your HTML but I don't mind styling components.
+				Actually, with CSS3 features it's a nice break from complex logic in JavaScript.
 			</span>
 		),
 	},
@@ -50,7 +49,7 @@ export const SkillsConfig = [
 		description: (
 			<span>
 				JavaScript is my primary language in development.
-				This tool gives me the power to reveal a true potential of application frontend.
+				This tool gives me the power to reveal a true potential of application front-end.
 				I started with VanillaJS and learned a lot with it's evolution up to ES8.
 				Right now I'm exploring the charms of TypeScript and I'm a big fan of it so far.
 			</span>
@@ -62,10 +61,10 @@ export const SkillsConfig = [
 		description: (
 			<span>
 				React is possibly the best framework I have ever worked with and
-				I'm not talking only about frameworks for JavaScript.
-				React is simple, yet powerfull.
+				I'm not talking JavaScript only. React is simple, yet powerful.
 				It follows the principles of functional programming and
-				I think it's a step in the right direction.
+				with every new version of React I'm more assured
+				it's a step in the right direction.
 			</span>
 		),
 	},
@@ -75,8 +74,8 @@ export const SkillsConfig = [
 		description: (
 			<span>
 				It started as a simple solution for state management problems in single-page applications.
-				It ended as one of the most popular libraries in JS world with large ecosystem.
-				Redux may not be the ultimate solution for state management, but it's darn close.
+				It ended as one of the most popular libraries with large ecosystem.
+				Redux might not be the ultimate solution for state management but it's darn close.
 				I love it.
 			</span>
 		),
@@ -88,7 +87,7 @@ export const SkillsConfig = [
 			<span>
 				I feel that many front-end developers jumped quite quickly right
 				into that fancy world of React and Angular. However, they lack basic development skills like
-				design patterns, algorithmisation, sense of decomposition or data modelling.
+				design patterns, algorithmisation, sense of decomposition or data modeling.
 				I work in IT for almost 10 years now and can't imagine development without this solid foundation.
 			</span>
 		),
@@ -98,7 +97,7 @@ export const SkillsConfig = [
 		title: 'Testing',
 		description: (
 			<span>
-				Even though frontend testing is difficult and has it's specifics,
+				Even though front-end testing is difficult and has it's specifics,
 				I was teached to test my code through the entire university and I'm doing it since then.
 				I have experience with TDD, Unit testing and Performance testing.
 			</span>
@@ -110,8 +109,8 @@ export const SkillsConfig = [
 		description: (
 			<span>
 				My interest in graphic design helps me keep up with the latest trends in web design.
-				Even though I've never been doing it professionaly, I'm quite skilled in Adobe Photoshop.
-				Therefore I'm able to do most of front-end graphic work by myself.
+				Even though I've never been doing it professionally, I'm quite skilled in Adobe Photoshop.
+				Therefore I'm able to do most of the front-end graphic work by myself.
 			</span>
 		),
 	},
