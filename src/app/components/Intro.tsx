@@ -22,7 +22,7 @@ export default class Intro extends React.PureComponent<IProps> {
 						<div className='text'>
 							<h1>Jakub Šoltés</h1>
 							<div className='separator'/>
-							<h2>web front-end developer</h2>
+							<h2>front-end web developer</h2>
 						</div>
 					</div>
 
