@@ -25,7 +25,7 @@ export const HobbyConfig = [
 				it quickly became one of my biggest passions.
 				Whether it is Lindy Hop, Charleston or Collegiate Shag,
 				I can't resist the urge to move to that syncopated rhythm.
-				I simply love those upbeat melodies and playful mood.
+				I simply love those upbeat melodies and playful moods.
 				30's fashion is the cherry on top.
 			</span>
 		),
@@ -58,7 +58,7 @@ export const HobbyConfig = [
 		title: 'I play',
 		description: (
 			<span>
-				I play the guitar since I was 15 when I started a high school rock band.
+				I have been playing the guitar since I was 15 when I started a high school rock band.
 				Even though I don't have much time to play now,
 				my passion for music roots deep in my soul.
 				In the future, I would like to learn to play on piano.
@@ -70,9 +70,9 @@ export const HobbyConfig = [
 		title: 'I chill',
 		description: (
 			<span>
-				My favorite way of relax are long walks with my girlfriend.
+				My favorite way to relax are long walks with my wife.
 				And when we don't feel like doing anything, we cook some food and watch a movie.
-				I also like to play chess inspite of being terrible at it
+				I also like to play chess in spite of being terrible at it
 				and I never say no to a good read.
 			</span>
 		),

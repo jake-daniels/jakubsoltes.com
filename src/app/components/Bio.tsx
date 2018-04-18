@@ -32,8 +32,8 @@ export default class Bio extends React.PureComponent<IProps> {
 					currently based in Brno, Czech republic.
 				</p>
 				<p>
-					My primary field is development of front-end for web applications.
-					I focus especially on architecture of the codebase and quality of it's design.
+					My primary field is the development of front-end for web applications.
+					I focus especially on the architecture of the codebase and quality of it's design.
 				</p>
 				<p>
 					What differs me from others is my <br/>

@@ -51,8 +51,8 @@ export const EventsConfig: IEvent[] = [
 		title: 'It all started here...',
 		description: (
 			<span>
-				The year, when first public web page was created.<br/>
-				Also the year, when future web developer was born.<br/>
+				The year, when the first public web page was created.<br/>
+				Also the year, when the future web developer was born.<br/>
 				Coincidence? I don't think so.
 			</span>
 		),
@@ -77,7 +77,7 @@ export const EventsConfig: IEvent[] = [
 		title: 'High school finished',
 		description: (
 			<span>
-				Luckily, the high school I visited gives the students an opportunity
+				Luckily, the high school I visited gave the students an opportunity
 				to choose their field of focus. For me, the choice was obvious.
 				In my IT lectures, I learned basics of Pascal, Visual Basic and C.
 			</span>
@@ -93,9 +93,9 @@ export const EventsConfig: IEvent[] = [
 		description: (
 			<span>
 				Right after I started a college, I decided to gain some real work experience.
-				I was hired as a C# developer and I worked on desktop application
-				specialized on computer vision. I learned a lot about software design and architecture principles.
-				Martin Fowler has became my hero back then.
+				I was hired as a C# developer and I worked on desktop applications
+				specialized in computer vision. I learned a lot about software design and architecture principles.
+				Martin Fowler has become my hero since then.
 			</span>
 		),
 	},
@@ -112,7 +112,7 @@ export const EventsConfig: IEvent[] = [
 			<span>
 				My bachelor studies gave me a great understanding of how information technologies work.
 				I tried over 10 different programming languages and acquired a broad overview in different fields of IT.
-				As my bachelor thesis I developed an application for tree stability measurement.
+				For my bachelor thesis I developed an application for tree stability measurement.
 			</span>
 		),
 	},
@@ -150,7 +150,7 @@ export const EventsConfig: IEvent[] = [
 		description: (
 			<span>
 				I wanted my master studies to be as close to real work-life as possible.
-				That's why I chose the newest programme on the faculty - {Links.SSME}.
+				That's why I chose the newest programme in the faculty - {Links.SSME}.
 				I was given an overview of many fields related to IT services such as
 				business, marketing, management, finance, social science and communication skills.
 				The aim of this programme is to produce multi-disciplinary skilled individuals.
@@ -170,10 +170,10 @@ export const EventsConfig: IEvent[] = [
 			<span>
 				I started working at ROI Hunter in November 2016.
 				I had no experience with Facebook marketing at that time.
-				Right after I gained required knowledge about domain,
-				I could start helping with improvement of platform's architecture.
-				I leared a lot about building fairly large web application.
-				Since the start of this year I am responsible for standalone module,
+				Right after I gained the required knowledge about domain,
+				I could start helping with the improvement of platform's architecture.
+				I learnt a lot about building fairly large web applications.
+				Since the start of this year I am responsible for a standalone module,
 				which serves as an editor of image templates for Facebook ads.
 			</span>
 		),
@@ -190,7 +190,7 @@ export const EventsConfig: IEvent[] = [
 				Right now I'm quite excited about {Links.AsyncRender} in React.
 				As the mobile platform is on the rise, {Links.ReactNative} could be a good choice.
 				I'm curious about {Links.MobX} as an alternative to Redux from small projects.
-				I plan to take a look on {Links.ReduxSaga} and {Links.RxJS} for some time now.
+				I have been planning to take a look at {Links.ReduxSaga} and {Links.RxJS} for some time now.
 				{Links.GraphQL} really got my attention together with {Links.Relay} and {Links.Apollo} as the client-side solutions.
 				I've never had the need to use serve-side rendering, but {Links.NEXTjs} looks promising.
 				I would like to dive more into {Links.ProgressiveWebApps} and {Links.WebSockets}.

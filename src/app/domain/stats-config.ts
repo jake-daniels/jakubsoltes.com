@@ -34,19 +34,19 @@ export const StatsConfig = [
 	{
 		id: EStat.Chat,
 		label: 'effective communicator',
-		description: 'Nothing can beat personal contact, confidence and open mind.',
+		description: 'Nothing can beat personal contact, confidence and an open mind.',
 		position: StatPosition.Right,
 	},
 	{
 		id: EStat.Structure,
 		label: 'well organized',
-		description: 'Small OCD can be a good thing. I like to keep my projects cleaned up.',
+		description: 'Small OCD can be a good thing. I like to keep my projects clean.',
 		position: StatPosition.Left,
 	},
 	{
 		id: EStat.Learn,
 		label: 'quick learner',
-		description: 'The importance of learning is in application of the knowledge.',
+		description: 'The importance of learning is in the application of the knowledge.',
 		position: StatPosition.Left,
 	},
 	{
@@ -64,13 +64,13 @@ export const StatsConfig = [
 	{
 		id: EStat.Leader,
 		label: 'leadership tendency',
-		description: 'Motivation is the key when there\'s need for lead.',
+		description: 'Motivation is the key when there\'s a need for lead.',
 		position: StatPosition.Right,
 	},
 	{
 		id: EStat.Creative,
 		label: 'creative mind',
-		description: 'Creative approach results in best solutions.',
+		description: 'A creative approach results in the best solutions.',
 		position: StatPosition.Right,
 	},
 	{

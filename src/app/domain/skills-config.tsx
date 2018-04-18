@@ -28,7 +28,7 @@ export const SkillsConfig = [
 			<span>
 				HTML represents the backbone of every web application.
 				It matured over time and the latest HTML5 revealed the true power of this technology.
-				Every web developer works with it on daily basis and I'm not an exception.
+				Every web developer works with it on a daily basis and I'm not an exception.
 			</span>
 		),
 	},
@@ -61,7 +61,7 @@ export const SkillsConfig = [
 		description: (
 			<span>
 				React is possibly the best framework I have ever worked with and
-				I'm not talking JavaScript only. React is simple, yet powerful.
+				I'm not talking about JavaScript only. React is simple, yet powerful.
 				It follows the principles of functional programming and
 				with every new version of React I'm more assured
 				it's a step in the right direction.
@@ -74,7 +74,7 @@ export const SkillsConfig = [
 		description: (
 			<span>
 				It started as a simple solution for state management problems in single-page applications.
-				It ended as one of the most popular libraries with large ecosystem.
+				It ended up as one of the most popular libraries with a large ecosystem.
 				Redux might not be the ultimate solution for state management but it's darn close.
 				I love it.
 			</span>
@@ -88,7 +88,7 @@ export const SkillsConfig = [
 				I feel that many front-end developers jumped quite quickly right
 				into that fancy world of React and Angular. However, they lack basic development skills like
 				design patterns, algorithmisation, sense of decomposition or data modeling.
-				I work in IT for almost 10 years now and can't imagine development without this solid foundation.
+				I have worked in IT for almost 10 years now and can't imagine development without this solid foundation.
 			</span>
 		),
 	},
@@ -98,7 +98,7 @@ export const SkillsConfig = [
 		description: (
 			<span>
 				Even though front-end testing is difficult and has it's specifics,
-				I was teached to test my code through the entire university and I'm doing it since then.
+				I was taught to test my code through the entire university and I've been doing it since then.
 				I have experience with TDD, Unit testing and Performance testing.
 			</span>
 		),
@@ -122,7 +122,7 @@ export const SkillsConfig = [
 				In my opinion, Git is the perfect version control tool.
 				Every front-end developer should have mastered it.
 				And I don't mean only cloning a repository and basic work with branches.
-				Cherry-pick, interactive rebase or squash are very usefool tools in the box.
+				Cherry-pick, interactive rebase or squash are very useful tools in the box.
 			</span>
 		),
 	},
@@ -131,8 +131,8 @@ export const SkillsConfig = [
 		title: 'SW Architecture',
 		description: (
 			<span>
-				Design time has always been my favorite part of development process.
-				I love those days spent by product analysis and design of fundamental app structure.
+				Design time has always been my favorite part of the development process.
+				I love those days spent on product analysis and design of fundamental app structure.
 				I may not know every little JS trick but when it comes application architecture, I'm the guy for it.
 			</span>
 		),
