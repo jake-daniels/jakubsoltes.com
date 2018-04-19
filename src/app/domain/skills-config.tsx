@@ -50,7 +50,7 @@ export const SkillsConfig = [
 			<span>
 				JavaScript is my primary language in development.
 				This tool gives me the power to reveal a true potential of application front-end.
-				I started with VanillaJS and learned a lot with it's evolution up to ES8.
+				I started with VanillaJS and learned a lot with its evolution up to ES8.
 				Right now I'm exploring the charms of TypeScript and I'm a big fan of it so far.
 			</span>
 		),
@@ -97,7 +97,7 @@ export const SkillsConfig = [
 		title: 'Testing',
 		description: (
 			<span>
-				Even though front-end testing is difficult and has it's specifics,
+				Even though front-end testing is difficult and has its specifics,
 				I was taught to test my code through the entire university and I've been doing it since then.
 				I have experience with TDD, Unit testing and Performance testing.
 			</span>

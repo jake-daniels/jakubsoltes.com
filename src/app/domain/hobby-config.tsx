@@ -47,7 +47,7 @@ export const HobbyConfig = [
 		description: (
 			<span>
 				After hours spent sitting behind the screen, nothing can refresh me
-				as much as exercising. I love playing badminton for it's dynamic nature.
+				as much as exercising. I love playing badminton for its dynamic nature.
 				I regularly swim and run because it calms me.
 				And when I want to release excessive energy, weight-lifting is a way to go.
 			</span>

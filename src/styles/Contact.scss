@@ -50,8 +50,10 @@ $padding: 40px;
 		&.visible {
 			transform: translateX(0);
 		}
+		&.small {
+			width: 30vw;
+		}
 	}
-
 
 	.panel {
 		&.info-panel {
@@ -190,6 +192,18 @@ $padding: 40px;
 			&:before {
 				border-radius: 5px;
 			}
+		}
+	}
+
+	.thank-you {
+		width: 100%;
+		text-align: center;
+		color: white;
+		line-height: 25px;
+		font-size: 16px;
+		.large {
+			font-size: 20px;
+			margin-bottom: 20px;
 		}
 	}
 }

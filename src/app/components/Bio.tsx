@@ -33,10 +33,10 @@ export default class Bio extends React.PureComponent<IProps> {
 				</p>
 				<p>
 					My primary field is the development of front-end for web applications.
-					I focus especially on the architecture of the codebase and quality of it's design.
+					I focus especially on the architecture of the code-base and quality of its design.
 				</p>
 				<p>
-					What differs me from others is my <br/>
+					What sets me apart from others is my <br/>
 					multi-disciplined approach to work.<br/>
 					Besides development, I have experience with graphic design, product analysis and project management.<br/>
 					I like to explore new technologies and I'm always for a good team-work.

@@ -1,6 +1,8 @@
 
 import React from 'react'
 
+const SEND_CONFIRM_TIMEOUT = 4000
+
 enum EField {
 	Name = 'name',
 	Email = 'email',
@@ -23,6 +25,7 @@ interface IState {
 	values: IContactData,
 	validity: IValidity,
 	isWarningVisible: boolean,
+	isMessageSent: boolean,
 }
 
 interface IProps {
@@ -46,6 +49,7 @@ export default class Contact extends React.PureComponent<IProps, IState> {
 			message: null,
 		},
 		isWarningVisible: false,
+		isMessageSent: false,
 	}
 
 	componentDidMount () {
@@ -98,7 +102,8 @@ export default class Contact extends React.PureComponent<IProps, IState> {
 
 		if (isFormValid) {
 			this.props.onSend(values)
-			this.props.onHide()
+			this.setState({isMessageSent: true})
+			setTimeout(() => this.props.onHide(), SEND_CONFIRM_TIMEOUT)
 		} else {
 			this.setState({isWarningVisible: true})
 			this.validateAllFields()
@@ -221,18 +226,30 @@ export default class Contact extends React.PureComponent<IProps, IState> {
 
 	render () {
 		const {onHide} = this.props
+		const {isMessageSent} = this.state
 
 		return (
 			<div className='contact'>
-				<div className='backdrop'>
+				<div className='backdrop' onClick={onHide}>
 					<div className='icon-close' onClick={onHide}>
 						<i className='fa-icon back' />
 					</div>
 				</div>
-				<div className='content' ref={this.content}>
-					<this.InfoPanel/>
-					<this.FormPanel/>
-				</div>
+				{!isMessageSent &&
+					<div className='content' ref={this.content}>
+						<this.InfoPanel />
+						<this.FormPanel />
+					</div>
+				}
+				{isMessageSent &&
+					<div className='content visible small'>
+						<div className='thank-you'>
+							<div className='large'>Your message has been sent.</div>
+							Thank you for your interest.<br/>
+							I will respond as soon as possible.
+						</div>
+					</div>
+				}
 			</div>
 		)
 	}

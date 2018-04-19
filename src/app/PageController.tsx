@@ -62,7 +62,10 @@ export default class Page extends React.Component<{}, IState> {
 
 		return (
 			<div className='app-page'>
-				<NavBar showContact={this.showContact}/>
+				<NavBar
+					showContact={this.showContact}
+					onPageChange={this.hideContact}
+				/>
 				<Switch>
 					<Route exact={true} path={AppSettings.Routes.Me} render={renderMePage} />
 					<Route exact={true} path={AppSettings.Routes.Work} component={Work} />
