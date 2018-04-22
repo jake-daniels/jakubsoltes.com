@@ -53,9 +53,12 @@ export default class Contact extends React.PureComponent<IProps, IState> {
 	}
 
 	componentDidMount () {
-		setTimeout(() => {
-			this.content.current!.classList.add('visible')
-		}, 0)
+		document.body.style.overflow = 'hidden'
+		setTimeout(() => this.content.current!.classList.add('visible'), 0)
+	}
+
+	componentWillUnmount () {
+		document.body.style.overflow = 'visible'
 	}
 
 	setFieldValue = (id: EField, value: any) => {

@@ -27,7 +27,6 @@ export default class Gallery extends React.PureComponent<IProps> {
 	componentDidMount () {
 		document.body.style.overflow = 'hidden'
 		window.addEventListener('keydown', this.onKeyDown)
-
 	}
 
 	componentWillUnmount () {
