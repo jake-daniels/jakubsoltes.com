@@ -15,11 +15,16 @@
 		position: fixed;
 		width: 100%;
 		height: $intro-height;
-		background-image: url('../images/backgrounds/bg-intro.jpg');
+		background-image: url('../images/backgrounds/bg-intro-mini.jpg');
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
-		filter: brightness(75%);
+		filter: brightness(75%) blur(30px);
+		transform: translateZ(0);
+		&.enhanced {
+			background-image: url('../images/backgrounds/bg-intro.jpg');
+			filter: brightness(75%);
+		}
 	}
 }
 
@@ -95,11 +100,16 @@
 		top: $slant-height;
 		width: 100%;
 		height: 100vh;
-		background-image: url('../images/backgrounds/bg-stats.jpg');
+		background-image: url('../images/backgrounds/bg-stats-mini.jpg');
 		background-repeat: no-repeat;
-		background-position: center center;
+		background-position: center;
 		background-size: cover;
-		filter: brightness(60%);
+		filter: brightness(60%) blur(30px);
+		transform: translateZ(0);
+		&.enhanced {
+			background-image: url('../images/backgrounds/bg-stats.jpg');
+			filter: brightness(60%);
+		}
 	}
 
 	.content-overlay {
@@ -112,3 +122,5 @@
 @import 'styles/Intro.scss';
 @import 'styles/Bio.scss';
 @import 'styles/Stats.scss';
+
+

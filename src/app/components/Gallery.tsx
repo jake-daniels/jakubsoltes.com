@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Slider from 'react-slick'
+import LazyImage from 'app/components/LazyImage'
 
 
 const SLIDER_SETTINGS = {
@@ -39,10 +40,10 @@ export default class Gallery extends React.PureComponent<IProps> {
 			this.props.onHide()
 		}
 		if (e.key === 'ArrowLeft') {
-			this.slider.current.slickPrev()
+			this.slider.current!.slickPrev()
 		}
 		if (e.key === 'ArrowRight') {
-			this.slider.current.slickNext()
+			this.slider.current!.slickNext()
 		}
 	}
 
@@ -59,9 +60,7 @@ export default class Gallery extends React.PureComponent<IProps> {
 				<div className='slider'>
 					<Slider {...SLIDER_SETTINGS} ref={this.slider}>
 						{IMAGES_PATHS.map((path, i) => (
-							<div key={i} className='item'>
-								<img src={path}/>
-							</div>
+							<LazyImage key={i} className='item' src={path} />
 						))}
 					</Slider>
 				</div>

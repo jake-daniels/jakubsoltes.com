@@ -2,6 +2,7 @@
 import React from 'react'
 import {HobbyConfig, IHobby, EHobby} from 'app/domain/hobby-config'
 import Gallery from 'app/components/Gallery'
+import BackgroundImage from 'images/backgrounds/bg-hobby.jpg'
 
 enum EHexagonType {
 	Title = 'title',
@@ -21,6 +22,20 @@ interface IProps {
 }
 
 export default class Hobby extends React.PureComponent<IProps> {
+
+	bgImage = React.createRef<HTMLDivElement>()
+
+	componentDidMount () {
+		const img = new Image()
+		img.src = BackgroundImage
+		img.onload = () => {
+			this.bgImage.current!.classList.add('enhanced')
+		}
+	}
+
+	componentDidUpdate () {
+		this.bgImage.current!.classList.add('enhanced')
+	}
 
 	getOrderedHexagons = (i: number) => {
 		return (i % 2 === 0)
@@ -71,12 +86,7 @@ export default class Hobby extends React.PureComponent<IProps> {
 			<div className='page page-hobby'>
 				<div className='section section-hobby'>
 
-					<div
-						className={cn({
-							'bg-image': true,
-							'fixed': isFixed,
-						})}
-					/>
+					<div ref={this.bgImage} className={cn({'bg-image': true, 'fixed': isFixed})} />
 
 					<div className='content'>
 						<h1 className='section-title'> What do I do outside the office? </h1>

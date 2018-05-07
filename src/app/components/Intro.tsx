@@ -1,5 +1,6 @@
 
 import React from 'react'
+import BackgroundImage from 'images/backgrounds/bg-intro.jpg'
 
 
 interface IProps {
@@ -8,13 +9,23 @@ interface IProps {
 
 export default class Intro extends React.PureComponent<IProps> {
 
+	bgImage = React.createRef<HTMLDivElement>()
+
+	componentDidMount () {
+		const img = new Image()
+		img.src = BackgroundImage
+		img.onload = () => {
+			this.bgImage.current!.classList.add('enhanced')
+		}
+	}
+
 	render () {
 		const {showBio} = this.props
 
 		return (
 			<div className='section section-intro'>
 
-				<div className='bg-image'/>
+				<div ref={this.bgImage} className='bg-image'/>
 
 				<div className='content-overlay'>
 

@@ -2,6 +2,7 @@
 import React from 'react'
 import {StatsConfig, IStat, EStat, StatPosition} from 'app/domain/stats-config'
 export {EStat}
+import BackgroundImage from 'images/backgrounds/bg-stats.jpg'
 
 interface IProps {
 	isFixed: boolean,
@@ -10,6 +11,16 @@ interface IProps {
 }
 
 export default class Stats extends React.PureComponent<IProps> {
+
+	bgImage = React.createRef<HTMLDivElement>()
+
+	componentDidMount () {
+		const img = new Image()
+		img.src = BackgroundImage
+		img.onload = () => {
+			this.bgImage.current!.classList.add('enhanced')
+		}
+	}
 
 	Badge = ({stat}: {stat: IStat}) => {
 		const {revealed, reveal} = this.props
@@ -86,7 +97,7 @@ export default class Stats extends React.PureComponent<IProps> {
 					'fixed': isFixed,
 				})}
 			>
-				<div className='bg-image'/>
+				<div ref={this.bgImage} className='bg-image'/>
 				<div className='content-overlay'>
 					<this.StatsPanel position={StatPosition.Left}/>
 					<this.BadgeBox/>
