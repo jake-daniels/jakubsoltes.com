@@ -1,7 +1,8 @@
 
 import React from 'react'
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, withRouter} from 'react-router-dom'
 import * as EmailJS from 'emailjs-com'
+// import ReactGA from 'react-ga'
 
 // Pages
 import Me from 'app/pages/Me'
@@ -13,11 +14,19 @@ import NavBar from 'app/components/NavBar'
 import Footer from 'app/components/Footer'
 import Contact, {IContactData} from 'app/components/Contact'
 
+interface IProps extends IRouterProps {}
 interface IState {
 	isContactVisible: boolean,
 }
 
-export default class Page extends React.Component<{}, IState> {
+class PageController extends React.Component<IProps, IState> {
+
+	constructor (props: IProps) {
+		super(props)
+		// Google Analytics
+		// ReactGA.initialize('UA-117837028-1')
+		// props.history.listen((location, action) => ReactGA.pageview(location.pathname))
+	}
 
 	state: IState = {
 		isContactVisible: false,
@@ -67,7 +76,7 @@ export default class Page extends React.Component<{}, IState> {
 					onPageChange={this.hideContact}
 				/>
 				<Switch>
-					<Route exact={true} path={AppSettings.Routes.Me} render={renderMePage} />
+					<Route exact={true} path={AppSettings.Routes.Me} render={renderMePage}/>
 					<Route exact={true} path={AppSettings.Routes.Work} component={Work} />
 					<Route exact={true} path={AppSettings.Routes.Hobby} component={Hobby} />
 					<Route render={renderMePage} />
@@ -83,3 +92,5 @@ export default class Page extends React.Component<{}, IState> {
 		)
 	}
 }
+
+export default withRouter(PageController)
